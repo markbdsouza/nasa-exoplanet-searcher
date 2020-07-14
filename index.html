@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Exoplanet Searcher</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="header"> The NASA Expoplanet Searcher </h1>
+
+        <div class="input">
+
+            <div class="input__collection">
+                <div class="input__set">
+                    <label for="year" class="input__label">Year of Discovery</label>
+
+                    <select name="year" id="year">
+                        <option value="EMPTY"></option>
+                    </select>
+                </div>
+                <div class="input__set">
+                    <label for="method" class="input__label">Discovery Method</label>
+                    <select name="method" id="method">
+                        <option value="EMPTY"></option>
+                    </select>
+                </div>
+                <div class="input__set">
+                    <label for="facility" class="input__label">Discovery Facility</label>
+                    <select name="facility" id="facility">
+                        <option value="EMPTY"></option>
+                    </select>
+                </div>
+                <div class="input__set">
+                    <label for="hostName" class="input__label">Host Name</label>
+                    <select name="hostName" id="hostName">
+                        <option value="EMPTY"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="input__buttons">
+                <button class="btn" id="search">Search</button>
+                <button class="btn" id="clear">Clear</button>
+            </div>
+
+            <span class="input__error hidden">Please enter at least one value</span>
+        </div>
+    </div>
+
+    <div class="data__container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="data__col">Year</th>
+                    <th class="data__col">Discovery Method</th>
+                    <th class="data__col">Discovery Facility</th>
+                    <th class="data__col">Host Name</th>
+
+                </tr>
+            </thead>
+            <tbody class="tbody">
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>
