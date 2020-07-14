@@ -7,6 +7,7 @@ const yearEl = document.getElementById('year');
 const methodEl = document.getElementById('method');
 const hostNameEl = document.getElementById('hostName');
 const facilityEl = document.getElementById('facility');
+const errorMsgEl = document.getElementById('errorMsg');
 const DEFAULT_OPTION_VALUE = 'EMPTY';
 
 // https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/NASA-Exoplanet-Query.md
@@ -63,7 +64,7 @@ function addOptionToElement(element, optionArray) {
 function createURL() {
   let isClauseAdded = false;
   let URL =
-    'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,pl_disc,pl_discmethod,pl_facility';
+    'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,pl_disc,pl_discmethod,pl_facility&order=pl_disc';
   if (
     yearEl.value !== DEFAULT_OPTION_VALUE ||
     methodEl !== DEFAULT_OPTION_VALUE ||
@@ -98,7 +99,7 @@ async function initiateSearch({ isDefaultSearch }) {
   if (isDefaultSearch) {
     //
     URL =
-      'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,pl_disc,pl_discmethod,pl_facility&order=dec';
+      'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,pl_disc,pl_discmethod,pl_facility&order=pl_disc';
   } else {
     URL = createURL();
   }
@@ -135,9 +136,12 @@ function updateTable(data) {
 
 async function validateAndSearch() {
   if (validate()) {
+    errorMsgEl.classList.add('hidden');
     let data = await initiateSearch({ isDefaultSearch: false });
 
     updateTable(data);
+  } else {
+    errorMsgEl.classList.remove('hidden');
   }
 }
 
