@@ -65,21 +65,8 @@ table {
   }
 }
 
-//LOGO
-.logo {
-  height: 3.25rem;
-  margin-left: 2rem;
-}
-
-.legal {
-  font-size: 1.2rem;
-  color: var(--color-grey-light-4);
-  text-align: center;
-  padding: 2.5rem;
-
-  @media only screen and (max-width: $bp-medium) {
-    display: none;
-  }
+.arrow {
+  cursor: pointer;
 }
 
 .data {
@@ -95,36 +82,6 @@ table {
   }
 }
 
-.btn-inline {
-  border: none;
-  color: var(--color-primary);
-  font-size: inherit;
-  border-bottom: var(--line);
-  padding: 3px;
-  display: inline-block;
-  background-color: transparent;
-  cursor: pointer;
-  transition: all 0.2s;
-
-  & span {
-    margin-left: 3px;
-    transition: all 0.2s;
-  }
-
-  &:hover {
-    color: var(--color-grey-dark-1);
-
-    span {
-      margin-left: 8px;
-    }
-  }
-
-  &:focus {
-    outline: none;
-    animation: pulsate 1s infinite;
-  }
-}
-
 @keyframes pulsate {
   0%,
   100% {
@@ -136,10 +93,6 @@ table {
     transform: scale(1.05);
     box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
   }
-}
-
-.paragraph:not(:last-child) {
-  margin-bottom: 2rem;
 }
 
 .btn {
@@ -194,6 +147,55 @@ table {
 
   &:focus {
     outline: none;
-    animation: pulsate 1s infinite;
+    animation: pulsate 1s;
+  }
+}
+
+.loader {
+  animation: spin 1s infinite linear;
+  border: solid 2vmin transparent;
+  border-radius: 50%;
+  border-right-color: #09f;
+  border-top-color: #09f;
+  box-sizing: border-box;
+  height: 20vmin;
+  left: calc(50% - 10vmin);
+  position: fixed;
+  top: calc(50% - 10vmin);
+  width: 20vmin;
+  z-index: 1;
+  &:before {
+    animation: spin 2s infinite linear;
+    border: solid 2vmin transparent;
+    border-radius: 50%;
+    border-right-color: #3cf;
+    border-top-color: #3cf;
+    box-sizing: border-box;
+    content: '';
+    height: 16vmin;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 16vmin;
+  }
+  &:after {
+    animation: spin 3s infinite linear;
+    border: solid 2vmin transparent;
+    border-radius: 50%;
+    border-right-color: #6ff;
+    border-top-color: #6ff;
+    box-sizing: border-box;
+    content: '';
+    height: 12vmin;
+    left: 2vmin;
+    position: absolute;
+    top: 2vmin;
+    width: 12vmin;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
 }

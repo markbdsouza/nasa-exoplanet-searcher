@@ -1,4 +1,5 @@
 const inputEls = document.querySelectorAll('select');
+const loader = document.querySelector('loader');
 const clearBtn = document.getElementById('clear');
 const searchBtn = document.getElementById('search');
 const dataEl = document.querySelector('.data-container');

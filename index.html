@@ -9,8 +9,10 @@
 </head>
 
 <body>
+    <div class='loader'></div>
+
     <div class="header">
-        <h1 class=""> The NASA Expoplanet Searcher </h1>
+        <h1 class=""> The NASA Exoplanet Searcher </h1>
 
         <div class="input">
 
@@ -18,7 +20,7 @@
                 <div class="input__set">
                     <label for="year" class="input__label">Year of Discovery</label>
 
-                    <select name="year" id="year" class="input__select">
+                    <select name="year" id="year" class="input__select" disabled>
                         <option value="EMPTY"></option>
                     </select>
                 </div>
@@ -55,10 +57,22 @@
         <table>
             <thead>
                 <tr>
-                    <th class="data__col--1">Year</th>
-                    <th class="data__col--2">Discovery Method</th>
-                    <th class="data__col--3">Discovery Facility</th>
-                    <th class="data__col--4">Host Name</th>
+                    <th class="data__col--1">Year
+                        <span class="arrow up">&#8593;</span>
+                        <span class="arrow down">&#8595;</span>
+                    </th>
+                    <th class="data__col--2">Discovery Method
+                        <span class="arrow up">&#8593;</span>
+                        <span class="arrow down">&#8595;</span>
+                    </th>
+                    <th class="data__col--3">Discovery Facility
+                        <span class="arrow up">&#8593;</span>
+                        <span class="arrow down">&#8595;</span>
+                    </th>
+                    <th class="data__col--4">Host Name
+                        <span class="arrow up">&#8593;</span>
+                        <span class="arrow down">&#8595;</span>
+                    </th>
 
                 </tr>
             </thead>
