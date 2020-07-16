@@ -11,16 +11,15 @@
 <body>
     <div class='loader'></div>
 
-    <div class="header">
+    <div class="header loading">
         <h1 class=""> The NASA Exoplanet Searcher </h1>
 
-        <div class="input">
+        <div class="input hidden">
 
             <div class="input__collection">
                 <div class="input__set">
                     <label for="year" class="input__label">Year of Discovery</label>
-
-                    <select name="year" id="year" class="input__select" disabled>
+                    <select name="year" id="year" class="input__select">
                         <option value="EMPTY"></option>
                     </select>
                 </div>
@@ -52,7 +51,7 @@
         </div>
     </div>
 
-    <div class="data__container">
+    <div class="data__container hidden">
 
         <table>
             <thead>

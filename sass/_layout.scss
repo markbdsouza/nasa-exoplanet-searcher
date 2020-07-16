@@ -20,6 +20,7 @@
   width: 95vw;
   text-align: center;
   // height: 10rem;
+  height: auto;
   padding: 3rem 5rem;
   border-bottom: var(--line);
   margin: 2rem;
@@ -27,6 +28,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 3rem;
+  transition: 2s all;
 
   @media only screen and (max-width: $bp-smallest) {
     height: 10rem;

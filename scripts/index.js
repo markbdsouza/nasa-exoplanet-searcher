@@ -1,5 +1,8 @@
 const inputEls = document.querySelectorAll('select');
-const loader = document.querySelector('loader');
+const loader = document.querySelector('.loader');
+const inputContainer = document.querySelector('.input');
+const dataContainer = document.querySelector('.data__container');
+const header = document.querySelector('.header');
 const clearBtn = document.getElementById('clear');
 const searchBtn = document.getElementById('search');
 const dataEl = document.querySelector('.data-container');
@@ -19,7 +22,15 @@ const DEFAULT_OPTION_VALUE = 'EMPTY';
 // on load
 async function init() {
   let data = await initiateSearch({ isDefaultSearch: true });
+  displayElementsAfterLoad();
   initLoad(data);
+}
+
+function displayElementsAfterLoad() {
+  loader.remove();
+  inputContainer.classList.remove('hidden');
+  dataContainer.classList.remove('hidden');
+  header.classList.remove('loading');
 }
 
 function initLoad(data) {

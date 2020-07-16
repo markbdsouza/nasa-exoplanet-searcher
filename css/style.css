@@ -60,13 +60,15 @@ body {
   font-size: 3rem;
   width: 95vw;
   text-align: center;
+  height: auto;
   padding: 3rem 5rem;
   border-bottom: var(--line);
   margin: 2rem;
   background-image: url("../images/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 3rem; }
+  border-radius: 3rem;
+  transition: 2s all; }
   @media only screen and (max-width: 31.25em) {
     .header {
       height: 10rem;
@@ -154,6 +156,9 @@ body {
       opacity: 0;
       transform: translateX(-100%); }
 
+.hidden {
+  opacity: 0; }
+
 table {
   width: 90vw; }
   table th {
@@ -229,8 +234,8 @@ table {
   animation: spin 1s infinite linear;
   border: solid 2vmin transparent;
   border-radius: 50%;
-  border-right-color: #09f;
-  border-top-color: #09f;
+  border-right-color: var(--color-grey-light-1);
+  border-top-color: var(--color-grey-light-1);
   box-sizing: border-box;
   height: 20vmin;
   left: calc(50% - 10vmin);
@@ -242,8 +247,8 @@ table {
     animation: spin 2s infinite linear;
     border: solid 2vmin transparent;
     border-radius: 50%;
-    border-right-color: #3cf;
-    border-top-color: #3cf;
+    border-right-color: var(--color-grey-dark-2);
+    border-top-color: var(--color-grey-dark-2);
     box-sizing: border-box;
     content: '';
     height: 16vmin;
@@ -255,8 +260,8 @@ table {
     animation: spin 3s infinite linear;
     border: solid 2vmin transparent;
     border-radius: 50%;
-    border-right-color: #6ff;
-    border-top-color: #6ff;
+    border-right-color: var(--color-grey-light-1);
+    border-top-color: var(--color-grey-light-1);
     box-sizing: border-box;
     content: '';
     height: 12vmin;
