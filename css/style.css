@@ -180,6 +180,9 @@ table {
 .arrow {
   cursor: pointer; }
 
+.large {
+  font-size: 4rem; }
+
 .data__container {
   font-size: 2rem; }
 
