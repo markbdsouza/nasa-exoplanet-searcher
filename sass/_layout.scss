@@ -22,7 +22,8 @@
   // height: 10rem;
   height: auto;
   padding: 3rem 5rem;
-  border-bottom: var(--line);
+  border-bottom: 2px var(--color-primary) solid;
+  border-right: 2px var(--color-primary) solid;
   margin: 2rem;
   background-image: url('../images/bg.jpg');
   background-size: cover;
