@@ -19,9 +19,8 @@
   font-size: 3rem;
   width: 95vw;
   text-align: center;
-  // height: 10rem;
   height: auto;
-  padding: 3rem 5rem;
+  padding: 2rem 3rem;
   border-bottom: 2px var(--color-primary) solid;
   border-right: 2px var(--color-primary) solid;
   margin: 2rem;
@@ -30,9 +29,15 @@
   background-repeat: no-repeat;
   border-radius: 3rem;
   transition: 2s all;
+  @media only screen and (max-width: $bp-medium) {
+    width: 100vw;
+    font-size: 2.5rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
 
   @media only screen and (max-width: $bp-smallest) {
-    height: 10rem;
+    // height: 10rem;
     align-content: space-around;
   }
 }
@@ -45,58 +50,4 @@
   @media only screen and (max-width: $bp-medium) {
     flex-direction: column;
   }
-}
-
-.sidebar {
-  background-color: var(--color-grey-dark-1);
-  flex: 0 0 16%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.hotel-view {
-}
-
-.detail {
-  display: flex;
-  font-size: 1.4rem;
-  padding: 5rem;
-  background-color: var(--color-grey-light-3);
-  border-bottom: var(--line);
-
-  @media only screen and (max-width: $bp-medium) {
-    padding: 2rem;
-  }
-
-  @media only screen and (max-width: $bp-small) {
-    padding: 1rem;
-    flex-direction: column;
-  }
-}
-
-.description {
-  font-size: 1.4rem;
-  background-color: #fff;
-  box-shadow: var(--shadow-light);
-  padding: 3rem;
-  flex: 0 0 60%;
-  margin-right: 5rem;
-  @media only screen and (max-width: $bp-medium) {
-    padding: 1rem;
-    margin-right: 2rem;
-  }
-
-  @media only screen and (max-width: $bp-small) {
-    padding: 1rem;
-    margin-right: 0;
-    margin-bottom: 3rem;
-  }
-}
-
-.user-reviews {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
