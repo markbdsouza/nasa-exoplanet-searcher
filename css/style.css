@@ -64,7 +64,6 @@ body {
   padding: 2rem 3rem;
   border-bottom: 2px var(--color-primary) solid;
   border-right: 2px var(--color-primary) solid;
-  margin: 2rem;
   background-image: url("../images/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -74,8 +73,7 @@ body {
     .header {
       width: 100vw;
       font-size: 2.5rem;
-      padding: 1rem;
-      margin: 1rem; } }
+      padding: 0rem; } }
   @media only screen and (max-width: 31.25em) {
     .header {
       align-content: space-around; } }
@@ -87,6 +85,9 @@ body {
   @media only screen and (max-width: 56.25em) {
     .content {
       flex-direction: column; } }
+
+.h1 {
+  font-size: 5rem; }
 
 .input {
   display: flex;
@@ -139,25 +140,16 @@ table {
   table th {
     font-size: 2.5rem;
     margin-bottom: 1rem; }
-
-.data__col--1 {
-  width: 15%;
-  color: var(--color-grey-light-2); }
-
-.data__col--2 {
-  width: 35%; }
-
-.data__col--3 {
-  width: 30%; }
-
-.data__col--4 {
-  width: 20%; }
-
-.data__col a:link, .data__col a:visited {
-  color: var(--color-primary);
-  display: inline-block;
-  text-decoration: none;
-  border-bottom: 1px solid var(--color-primary-light); }
+    @media only screen and (max-width: 56.25em) {
+      table th {
+        font-size: 2rem;
+        margin-bottom: 0.3rem; } }
+    @media only screen and (max-width: 31.25em) {
+      table th {
+        font-size: 1rem; } }
+  @media only screen and (max-width: 56.25em) {
+    table {
+      width: 100vw; } }
 
 .arrow {
   cursor: pointer;
@@ -167,20 +159,36 @@ table {
   font-size: 4rem; }
 
 .data__container {
-  font-size: 2rem; }
+  font-size: 2rem;
+  padding: 0 1rem; }
+  @media only screen and (max-width: 56.25em) {
+    .data__container {
+      font-size: 1.5rem; } }
+  @media only screen and (max-width: 31.25em) {
+    .data__container {
+      font-size: 1rem; } }
 
 .data__col {
   text-align: center;
-  padding: 0.5rem 2rem; }
+  padding: 0.5rem 1rem; }
+  .data__col--1 {
+    width: 15%;
+    color: var(--color-grey-light-2); }
+  .data__col--2 {
+    width: 35%; }
+  .data__col--3 {
+    width: 30%; }
+  .data__col--4 {
+    width: 20%; }
+  .data__col a:link, .data__col a:visited {
+    color: var(--color-primary);
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-primary-light); }
 
-@keyframes pulsate {
-  0%,
-  100% {
-    transform: scale(1);
-    box-shadow: 0; }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25); } }
+@media only screen and (max-width: 31.25em) {
+  .data {
+    padding: 0; } }
 
 .btn {
   cursor: pointer;
@@ -194,24 +202,8 @@ table {
   position: relative;
   overflow: hidden;
   color: #fff; }
-  .btn--1 {
-    margin-right: 5rem; }
-  .btn > * {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    transition: all 0.35s; }
-  .btn__invisible {
-    position: absolute;
-    top: -100%;
-    left: 0;
-    padding: 2rem 0rem; }
   .btn:hover {
     background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary)); }
-  .btn:hover .btn__invisible {
-    top: 0; }
-  .btn:hover .btn__visible {
-    transform: translateY(200%); }
   .btn:focus {
     outline: none;
     animation: pulsate 1s; }
@@ -259,3 +251,12 @@ table {
 @keyframes spin {
   100% {
     transform: rotate(360deg); } }
+
+@keyframes pulsate {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0; }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25); } }

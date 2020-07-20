@@ -1,3 +1,6 @@
+.h1 {
+  font-size: 5rem;
+}
 //search
 .input {
   display: flex;
@@ -70,31 +73,19 @@ table {
   th {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-  }
-}
 
-.data__col {
-  &--1 {
-    width: 15%;
-    color: var(--color-grey-light-2);
-  }
-  &--2 {
-    width: 35%;
-  }
-  &--3 {
-    width: 30%;
-  }
-  &--4 {
-    width: 20%;
-  }
-  & a {
-    &:link,
-    &:visited {
-      color: var(--color-primary);
-      display: inline-block;
-      text-decoration: none;
-      border-bottom: 1px solid var(--color-primary-light);
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
     }
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    width: 100vw;
   }
 }
 
@@ -111,25 +102,45 @@ table {
   &__container {
     // width: 80%;
     font-size: 2rem;
+    padding: 0 1rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.5rem;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1rem;
+    }
   }
+
   &__col {
-    // width: 24%;
-    // display: inline-block;
     text-align: center;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
+    &--1 {
+      width: 15%;
+      color: var(--color-grey-light-2);
+    }
+    &--2 {
+      width: 35%;
+    }
+    &--3 {
+      width: 30%;
+    }
+    &--4 {
+      width: 20%;
+    }
+    & a {
+      &:link,
+      &:visited {
+        color: var(--color-primary);
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid var(--color-primary-light);
+      }
+    }
   }
-}
 
-@keyframes pulsate {
-  0%,
-  100% {
-    transform: scale(1);
-    box-shadow: 0;
-  }
-
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 0;
   }
 }
 
@@ -150,37 +161,12 @@ table {
   overflow: hidden;
   color: #fff;
 
-  &--1 {
-    margin-right: 5rem;
-  }
-  & > * {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    transition: all 0.35s;
-  }
-  &__visible {
-  }
-  &__invisible {
-    position: absolute;
-    top: -100%;
-    left: 0;
-    padding: 2rem 0rem;
-  }
-
   &:hover {
     background-image: linear-gradient(
       to left,
       var(--color-primary-light),
       var(--color-primary)
     );
-  }
-  &:hover &__invisible {
-    top: 0;
-  }
-
-  &:hover &__visible {
-    transform: translateY(200%);
   }
 
   &:focus {
@@ -235,5 +221,18 @@ table {
 @keyframes spin {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes pulsate {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
   }
 }
